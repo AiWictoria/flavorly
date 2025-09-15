@@ -8,7 +8,6 @@ _db.sqlite3
 backend/bin
 backend/obj
 backend\appsettings.Development.json
-backend/db_template/_db.sqlite3
 # Logs
 logs
 *.log
