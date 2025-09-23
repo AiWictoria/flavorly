@@ -61,6 +61,11 @@ export default function SignIn() {
 
             <Button type="submit">Sign In</Button>
           </Form>
+
+          <div className="">
+            <a href="/">Forgot password?</a>
+            <a href="/">Sign up!</a>
+          </div>
         </Col>
       </Row>
     </>
