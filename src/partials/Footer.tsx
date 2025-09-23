@@ -6,7 +6,7 @@ export default function Footer() {
       <Container fluid>
         <Row>
           <Col className="text-center py-3 text-bg-primary">
-            © The Good Grocery {new Date().getFullYear()}
+            © Flavorly {new Date().getFullYear()}
           </Col>
         </Row>
       </Container>
