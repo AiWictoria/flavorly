@@ -14,10 +14,21 @@ export default function SignIn() {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
   }
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    console.log("Email:", user.email);
-    console.log("Password:", user.password);
+    const res = await fetch("/api/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(user),
+    });
+
+    if (res.ok) {
+      alert("INLOGGAD");
+    } else {
+      alert("Något gick fel!");
+    }
+    const data = await res.json();
+    console.log(data);
   }
   return (
     <>
