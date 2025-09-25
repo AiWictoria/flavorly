@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Card, CardText, Col, Row } from "react-bootstrap";
 RecipePage.route = {
   path: "/recipes",
   menuLabel: "Recipes",
@@ -29,18 +30,26 @@ export default function RecipePage() {
   return (
     <>
       <h2>Recipes</h2>
-      <ul>
+      <Row xs="1" md="2" lg="4">
         {recipes.map((recipe) => (
-          <li key={recipe.id}>
-            {recipe.title}
-            <br />
-            Ingredients: {recipe.ingredients}
-            <br />
-            Instructions: {recipe.instructions}
-            <br />
-          </li>
+          <Col key={recipe.id}>
+            <Card>
+              <Card.Body>
+                <Card.Title>{recipe.title}</Card.Title>
+                <Card.Subtitle>{recipe.category}</Card.Subtitle>
+                <Card.Text>
+                  <strong>Ingredients: </strong>
+                  {recipe.ingredients}
+                </Card.Text>
+                <Card.Text>
+                  <strong>Instructions: </strong>
+                  {recipe.instructions}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
         ))}
-      </ul>
+      </Row>
     </>
   );
 }
